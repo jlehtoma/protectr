@@ -1,0 +1,23 @@
+Package: protectr
+Title: Systematic Protected Area Design in R
+Version: 0.0.0.9000
+Authors@R: "Matthew Strimas-Mackey <mstrimas@gmail.com> [aut,cre]"
+Description: Solve Marxan-like systematic reserve design problems using integer
+    programming techniques as implemented by the Gurobi Optimizer.
+Depends:
+    R (>= 3.2.4)
+License: MIT + file LICENSE
+LazyData: true
+Imports:
+    assertthat,
+    raster,
+    sp,
+    rgeos,
+    gstat,
+    dplyr,
+    slam,
+    tidyr,
+    rasterVis
+RoxygenNote: 5.0.1
+Suggests: marxan,
+    gurobi
