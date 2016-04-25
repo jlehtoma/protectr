@@ -1,6 +1,6 @@
 Package: protectr
 Title: Systematic Protected Area Design in R
-Version: 0.0.0.9000
+Version: 0.0.1.9000
 Authors@R: "Matthew Strimas-Mackey <mstrimas@gmail.com> [aut,cre]"
 Description: Solve Marxan-like systematic reserve design problems using integer
     programming techniques as implemented by the Gurobi Optimizer.

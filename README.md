@@ -1,6 +1,8 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-protectr: Systematic Protected Area Design in R
-===============================================
+Protected Area Design with Gurobi in R
+======================================
+
+**NOTE: This package is in development and requires further testing before I can be confident there are no bugs. If you use this package, or have any feature requests, please let me know by posting an Issue.**
 
 The primary purpose of this package is to solve Marxan-like systematic reserve design problems using integer programming techniques as implemented by Gurobi. [Marxan](http://www.uq.edu.au/marxan/) is the most widely used systematic conservation planning software. It's used worldwide to design reserve networks that maximize conservation gains while minimizing socioeconomic cost. [**Gurobi**](http://www.gurobi.com/) is a powerful commercial optimization software that implements a variety of state-of-the-art algorithms for solving optimization problems. This R package can be used to solve the Marxan reserve design optimization problem using Gurobi.
 
@@ -49,16 +51,8 @@ Use
 ``` r
 library(magrittr)
 library(raster)
-#> Loading required package: sp
-#> 
-#> Attaching package: 'raster'
-#> The following object is masked from 'package:magrittr':
-#> 
-#>     extract
 library(rasterVis)
-#> Loading required package: lattice
-#> Loading required package: latticeExtra
-#> Loading required package: RColorBrewer
+#> Warning: package 'rasterVis' was built under R version 3.2.5
 library(viridis)
 library(protectr)
 set.seed(1)
@@ -85,7 +79,7 @@ levelplot(species, main = 'Species Distributions', layout = c(3, 3),
           col.regions = c("grey20", "#fd9900"), colorkey = FALSE)
 ```
 
-![](figures/README-set-up-1.png)<!-- -->
+![](figures/README-set-up-1.png)
 
 ``` r
 # genrate cost layer
@@ -94,7 +88,7 @@ cost <- gaussian_field(r, 20, mean = 1000, variance = 500) %>%
 levelplot(cost, main = "Cost", margin = FALSE, col.regions = viridis)
 ```
 
-![](figures/README-set-up-2.png)<!-- -->
+![](figures/README-set-up-2.png)
 
 ### Minimum set cover
 
@@ -112,7 +106,7 @@ The function `plot_selection()` will plot the resulting reserve network.
 plot_selection(cost, results_msc$x, title = "Minimum Set Cover")
 ```
 
-![](figures/README-plot-msp-1.png)<!-- -->
+![](figures/README-plot-msp-1.png)
 
 ### Maximum coverage problem
 
@@ -131,7 +125,7 @@ Plotting this solution.
 plot_selection(cost, results_mc$x, title = "Maximum Coverage")
 ```
 
-![](figures/README-plot-mc-1.png)<!-- -->
+![](figures/README-plot-mc-1.png)
 
 ### Marxan reserve design problem
 
@@ -156,14 +150,14 @@ So, the gap to the optimum is 0.5%, within the specified distance. A plot of the
 plot_selection(cost, results_marxan$x, title = "Marxan Problem")
 ```
 
-![](figures/README-plot-marxan-1.png)<!-- -->
+![](figures/README-plot-marxan-1.png)
 
 References and Resources
 ------------------------
 
 This package was inspired by a recent paper by [Beyer et al. (2016)](http://www.sciencedirect.com/science/article/pii/S0304380016300217) that looked at Gurobi as a tool for reserve design. The supplementary material for this paper includes their code, which helped in developing this package.
 
-Beyer HL, Dujardin Y, Watts ME, Possingham HP. 2016. Solving conservation planning problems with integer linear programming. Ecological Modelling 328: 14–22.
+    Beyer HL, Dujardin Y, Watts ME, Possingham HP. 2016. Solving conservation planning problems with integer linear programming. Ecological Modelling 328: 14–22.
 
 In addition, the [Marxan User Manual](http://www.uq.edu.au/marxan/docs/Marxan_User_Manual_2008.pdf), [Marxan Good Practices Handbook](http://www.uq.edu.au/marxan/docs/Marxan%20Good%20Practices%20Handbook%20v2%202010.pdf), and vignettes for the [Marxan R package](https://github.com/paleo13/marxan) were all valuable resources that I used when building this package.
 
