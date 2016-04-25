@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 
 **NOTE: This package is in development and requires further testing before I can be confident there are no bugs. If you use this package, or have any feature requests, please let me know by posting an Issue.**
 
-The primary purpose of this package is to solve Marxan-like systematic reserve design problems using integer programming techniques as implemented by Gurobi. [Marxan](http://www.uq.edu.au/marxan/) is the most widely used systematic conservation planning software. It's used worldwide to design reserve networks that maximize conservation gains while minimizing socioeconomic cost. [**Gurobi**](http://www.gurobi.com/) is a powerful commercial optimization software that implements a variety of state-of-the-art algorithms for solving optimization problems. This R package can be used to solve the Marxan reserve design optimization problem using Gurobi.
+The primary purpose of this package is to solve Marxan-like systematic reserve design problems using integer programming techniques as implemented by Gurobi. [Marxan](http://www.uq.edu.au/marxan/) is the most widely used systematic conservation planning software. It's used worldwide to design reserve networks that maximize conservation gains while minimizing socioeconomic cost. [Gurobi](http://www.gurobi.com/) is a powerful commercial optimization software that implements a variety of state-of-the-art algorithms for solving optimization problems. This R package can be used to solve the Marxan reserve design optimization problem using Gurobi.
 
 In addition, this package contains a variety of functions to aid in setting up reserve design problems, such as defining regular grids of hexagonal planning units, calculating planning unit boundaries, and generating realistic species distributions. These functions may be valuable for reserve design in general whether using Gurobi, Marxan, or another tool. 
 
@@ -148,7 +148,7 @@ So, the gap to the optimum is `r paste0(round(gap, 2), "%")`, within the specifi
 A plot of the resulting reserve network shows much more aggregation compared to the minimum set cover solution above.
 
 ```{r plot-marxan}
-plot_selection(cost, results_marxan$x, title = "Marxan Problem")
+plot_selection(cost, results_marxan$x, title = "Marxan")
 ```
 
 ## References and Resources
