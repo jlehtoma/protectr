@@ -79,7 +79,7 @@ levelplot(species, main = 'Species Distributions', layout = c(3, 3),
           col.regions = c("grey20", "#fd9900"), colorkey = FALSE)
 ```
 
-![](figures/README-set-up-1.png)<!-- -->
+![](figures/README-set-up-1.png)
 
 ``` r
 # genrate cost layer
@@ -88,7 +88,7 @@ cost <- gaussian_field(r, 20, mean = 1000, variance = 500) %>%
 levelplot(cost, main = "Cost", margin = FALSE, col.regions = viridis)
 ```
 
-![](figures/README-set-up-2.png)<!-- -->
+![](figures/README-set-up-2.png)
 
 ### Minimum set cover
 
@@ -106,7 +106,7 @@ The function `plot_selection()` will plot the resulting reserve network.
 plot_selection(cost, results_msc$x, title = "Minimum Set Cover")
 ```
 
-![](figures/README-plot-msp-1.png)<!-- -->
+![](figures/README-plot-msp-1.png)
 
 ### Maximum coverage problem
 
@@ -125,7 +125,7 @@ Plotting this solution.
 plot_selection(cost, results_mc$x, title = "Maximum Coverage")
 ```
 
-![](figures/README-plot-mc-1.png)<!-- -->
+![](figures/README-plot-mc-1.png)
 
 ### Marxan reserve design problem
 
@@ -150,7 +150,7 @@ So, the gap to the optimum is 0.5%, within the specified distance. A plot of the
 plot_selection(cost, results_marxan$x, title = "Marxan")
 ```
 
-![](figures/README-plot-marxan-1.png)<!-- -->
+![](figures/README-plot-marxan-1.png)
 
 References and Resources
 ------------------------
