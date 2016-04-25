@@ -21,3 +21,5 @@ Imports:
 RoxygenNote: 5.0.1
 Suggests: marxan,
     gurobi
+URL: https://github.com/mstrimas/protectr
+BugReports: https://github.com/mstrimas/protectr/issues
