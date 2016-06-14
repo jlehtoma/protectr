@@ -5,7 +5,7 @@ Authors@R: "Matthew Strimas-Mackey <mstrimas@gmail.com> [aut,cre]"
 Description: Solve Marxan-like systematic reserve design problems using integer
     programming techniques as implemented by the Gurobi Optimizer.
 Depends:
-    R (>= 3.2.4)
+    R (>= 3.2.2)
 License: MIT + file LICENSE
 LazyData: true
 Imports:
